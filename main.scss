@@ -1,0 +1,304 @@
+/* 
+
+Happect web ©2020
+
+Main css file
+
+*/
+
+// Test comment
+
+/* SCCS variables */
+
+
+$primary-background-color: #231F20;
+$primary-text-color: #FBFAF8;
+$default-transition-duration: 230ms;
+$header-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+/*
+GENERAL STYLES
+_______________________________
+*/
+html {
+    scroll-behavior: smooth;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $primary-background-color;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    color: $primary-text-color;
+}
+main {
+    position: relative;
+}
+a {
+    text-decoration: none;
+    color: $primary-text-color;
+}
+button:focus, a:focus, input:focus, textarea:focus {
+    outline: none;
+}
+
+/*
+HEADER STYLES
+_______________________________
+*/
+.happect-header {
+    display: flex;
+    margin-top: 20px;
+    padding: 0 30px;
+    .happect-logo-area {
+        display: flex;
+        align-items: center;
+        flex: 3;
+    }
+    .happect-nav {
+        display: flex;
+        flex: 2;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            p {
+                position: relative;
+                &:before {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    background: $primary-text-color;
+                    bottom: -7px;
+                    opacity: 0;
+                    transition-duration: $default-transition-duration;
+                    transition-timing-function: $header-timing-function;
+                }
+                &:hover, &:focus {
+                    &:before {
+                        content: '';
+                        width: 100%;
+                        height: 1px;
+                        background: $primary-text-color;
+                        bottom: -3px;
+                        opacity: 1;
+                        transition-duration: $default-transition-duration;
+                        transition-timing-function: $header-timing-function;
+                    }
+                }
+            }
+        }
+    }
+}
+/*
+LANDING STYLES
+_______________________________
+*/
+.main-landing {
+    width: 40%;
+    position: absolute; 
+    top: 200px;
+    left: 20%;
+    h1 {
+        font-size: 64px;
+        font-weight: 500;
+    }
+    .happect-chain {
+        width: 75%;
+        margin: 75px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2 {
+            font-size: 36px;
+            font-weight: 100;
+            font-style: italic;
+        }
+    }
+    .land-button {
+        position: relative;
+        font-family: 'Open sans';
+        background: none;
+        padding: 5px 50px;
+        text-align: center;
+        border: 2px solid $primary-text-color;
+        border-radius: 10px;
+        color: $primary-text-color;
+        font-size: 24px;
+        cursor: pointer;
+        transition-duration: $default-transition-duration;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5%;
+            background: $primary-text-color;
+            bottom: 0;
+            left: 0;
+            border-radius: 0 0 7px 7px;
+            opacity: 0;
+            transition-duration: $default-transition-duration;
+        }
+        &:hover, &:focus {
+            &:before {
+                height: 7%;
+                opacity: 1;
+                transition-duration: $default-transition-duration;
+            }
+        }
+    }
+}
+/*
+CONTACT STYLES
+_______________________________
+*/
+.contact-button {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+}
+.contacts {
+    .contact-form-wrapper {
+        position: absolute;
+        right: 50px;
+        bottom: 150px;
+        padding: 15px;
+        height: 700px;
+        width: 500px;
+        background: $primary-background-color;
+        border: 2px solid $primary-text-color;
+        border-radius: 10px 0 0 10px;
+        font-family: 'Open sans', Arial, Helvetica, sans-serif;
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .contact-form-info {
+        margin-bottom: 30px;
+    }
+    .contact-form-triangle {
+        position: absolute;
+        bottom: 130px;
+        right: 69px;
+        width: 10px; 
+        height: 10px; 
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        
+        border-top: 20px solid $primary-text-color;
+    }
+    .contact-form {
+        input {
+            background: none;
+            border: none;
+            border-bottom: 3px solid rgb(99, 87, 90);
+            padding: 10px 0;
+            color: $primary-text-color;
+            transition: all $default-transition-duration ease;
+            font-size: 20px;
+        }
+        input, textarea {
+            &:focus {
+                border-bottom: 3px solid rgb(199, 187, 190);                
+            }
+        }
+        .input-wrapper {
+            position: relative;
+        }
+        .contact-float {
+            position: absolute;
+            pointer-events: none;
+            left: 0;
+            top: 15px;
+            transition: 0.2s ease all;
+        }
+        #contact-name:focus ~ .contact-name-float,
+        #contact-name:not(:focus):valid ~ .contact-name-float {
+            top: -10px;
+            font-size: 14px;
+            opacity: .6;
+        }
+        .answer-question {
+            margin: 20px 0;
+        }
+        .where-to-answer {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-evenly;
+            input {
+                display: none;
+                opacity: 0;
+                cursor: pointer;
+                z-index: 99;
+            }
+            svg {
+                width: 30px;
+                height: 30px;
+                transition: all $default-transition-duration ease;
+                cursor: pointer;
+            }
+            input:checked ~ .radio-mark svg {
+                width: 30px;
+                height: 30px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid $primary-text-color;
+                transform: translateY(-5px);
+                transition: all $default-transition-duration ease;
+            }
+        }
+        #client-telegram, #client-viber {
+            display: none;
+            &::placeholder {
+                font-size: 16px;
+                opacity: .8;
+                color: $primary-text-color;
+            }
+        }
+        #client-email {
+            &::placeholder {
+                font-size: 16px;
+                opacity: .8;
+                color: $primary-text-color;
+            }           
+        }
+        #contact-message {
+            margin-top: 50px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid rgb(99, 87, 90);
+            padding: 10px 0;
+            color: $primary-text-color;
+            font-size: 20px;
+            width: 100%;
+            resize: vertical;
+            height: 100px;
+            max-height: 200px;
+            min-height: 50px;
+            font-weight: light;
+            line-height: 1.01em;
+            letter-spacing: 0.04em;
+            transition: all $default-transition-duration ease;            
+            &:focus {
+                border-bottom: 3px solid rgb(199, 187, 190);   
+            }
+        }
+        #contact-submit {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px;
+            border-top: 1px solid rgb(99, 87, 90);
+            border-bottom: 1px solid rgb(99, 87, 90);
+            transition: all $default-transition-duration ease;            
+            &:focus, &:hover {
+                border-bottom: 3px solid rgb(199, 187, 190);   
+                border-top: 3px solid rgb(199, 187, 190); 
+            }
+        }
+    }
+}
