@@ -154,16 +154,38 @@ _______________________________
 CONTACT STYLES
 _______________________________
 */
-.contact-button {
+.contact-button-wrapper {
     position: fixed;
     right: 50px;
     bottom: 50px;
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     cursor: pointer;
+    background: #364D7D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    svg {
+        width: 35px;
+        height: 35px;
+        transition: all $default-transition-duration;
+        animation: slide-in-blurred-bottom-small $default-transition-duration ease;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+    .close-form {
+        display: none;
+        font-size: 36px;
+        transition: all $default-transition-duration;
+        animation: slide-in-blurred-top-small $default-transition-duration ease;
+    }
 }
 .contacts {
-    .contact-form-wrapper {
+    .contact-form-wrapper-hide {
+        opacity: 0;
+        transform: translateY(-10px);
         position: absolute;
         right: 50px;
         bottom: 150px;
@@ -174,6 +196,26 @@ _______________________________
         border: 2px solid $primary-text-color;
         border-radius: 10px 0 0 10px;
         font-family: 'Open sans', Arial, Helvetica, sans-serif;
+        transition: all $default-transition-duration;
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .contact-form-wrapper-show {
+        animation: slide-in-blurred-bottom $default-transition-duration ease;
+        position: absolute;
+        opacity: 1;
+        right: 50px;
+        bottom: 150px;
+        padding: 15px;
+        height: 700px;
+        width: 500px;
+        background: $primary-background-color;
+        border: 2px solid $primary-text-color;
+        border-radius: 10px 0 0 10px;
+        font-family: 'Open sans', Arial, Helvetica, sans-serif;
+        transition: all $default-transition-duration;
         form {
             display: flex;
             flex-direction: column;
@@ -181,17 +223,6 @@ _______________________________
     }
     .contact-form-info {
         margin-bottom: 30px;
-    }
-    .contact-form-triangle {
-        position: absolute;
-        bottom: 130px;
-        right: 69px;
-        width: 10px; 
-        height: 10px; 
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        
-        border-top: 20px solid $primary-text-color;
     }
     .contact-form {
         input {
@@ -244,8 +275,8 @@ _______________________________
                 cursor: pointer;
             }
             input:checked ~ .radio-mark svg {
-                width: 30px;
-                height: 30px;
+                width: 35px;
+                height: 35px;
                 padding-bottom: 5px;
                 border-bottom: 1px solid $primary-text-color;
                 transform: translateY(-5px);
@@ -290,6 +321,9 @@ _______________________________
         }
         #contact-submit {
             margin-top: 10px;
+            position: absolute;
+            bottom: 10px;
+            width: calc(100% - 30px);
             cursor: pointer;
             padding: 5px;
             border-top: 1px solid rgb(99, 87, 90);
@@ -302,3 +336,70 @@ _______________________________
         }
     }
 }
+
+/**
+ * ----------------------------------------
+ * animation slide-in-blurred-bottom
+ * ----------------------------------------
+ */
+@keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(100px) scaleY(1.1) scaleX(0.2);
+            transform: translateY(100px) scaleY(1.1) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-bottom-small {
+  0% {
+    -webkit-transform: translateY(5px) scaleY(1.1) scaleX(0.2);
+            transform: translateY(5px) scaleY(1.1) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-top-small {
+  0% {
+    -webkit-transform: translateY(-5px) scaleY(1.1) scaleX(0.2);
+            transform: translateY(-5px) scaleY(1.1) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
