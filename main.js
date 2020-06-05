@@ -79,6 +79,9 @@ viberOption.addEventListener('click', function() {
  Language switcher scripts 
 */
 let userLang = navigator.language || navigator.userLanguage;
+// default language
+let defaultLang = 'EN';
+let defaultLangPrefix = 'en';
 
 function defineLanguage() {
     // TODO: ADD LINKS TO APPROPRIATE PAGES
@@ -89,7 +92,7 @@ function defineLanguage() {
     } else if(userLang.includes('uk')) {
         return 'UA';
     } else {
-        return 'EN';
+        return defaultLang;
     }
  }
  defineLanguage();
@@ -98,17 +101,43 @@ let chosenLanguageButton = document.querySelector('.chosen-language');
 chosenLanguageButton.innerHTML = defineLanguage();
 
 
-function showLanguageChoice() {
-    if(userLang.includes('ru')) {
-        document.querySelector('.language-ru').parentElement.removeChild(document.querySelector('.language-ru'));
-    } else if(userLang.includes('en')) {
-        document.querySelector('.language-en').parentElement.removeChild(document.querySelector('.language-en'));
-    } else if(userLang.includes('uk')) {
-        document.querySelector('.language-ua').parentElement.removeChild(document.querySelector('.language-ua'));
-    } else {
-        document.querySelector('.language-en').parentElement.removeChild(document.querySelector('.language-en'));
+function showLanguageChoice() { 
+    switch (userLang) {
+        case 'ru':
+            document.querySelector('.language-ru').style.display = 'none';
+            break;
+        case 'en':
+            document.querySelector('.language-en').style.display = 'none';
+            break;
+        case 'uk': 
+            document.querySelector('.language-ua').style.display = 'none';
+            break;
+        default: 
+            document.querySelector(`.language-${defaultLangPrefix}`).style.display = 'none'
     }
-    document.querySelector('.language-list').style.display = 'block';
+    document.querySelector('.language-list-hidden').classList = 'language-list-shown';
+    chosenLanguageButton.removeEventListener('click', showLanguageChoice);
+    chosenLanguageButton.addEventListener('click', hideLanguageChoice);
+}
+
+function hideLanguageChoice() {
+    document.querySelector('.language-list-shown').classList = 'language-list-hidden';
+    chosenLanguageButton.removeEventListener('click', hideLanguageChoice);
+    chosenLanguageButton.addEventListener('click', showLanguageChoice);
+
+    switch (userLang) {
+        case 'ru':
+            document.querySelector('.language-ru').style.display = 'block';
+            break;
+        case 'en':
+            document.querySelector('.language-en').style.display = 'block';
+            break;
+        case 'uk': 
+            document.querySelector('.language-ua').style.display = 'block';
+            break;
+        default: 
+            document.querySelector(`.language-${defaultLangPrefix}`).style.display = 'block'
+    }
 }
 
 chosenLanguageButton.addEventListener('click', showLanguageChoice);
