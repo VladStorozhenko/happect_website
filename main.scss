@@ -337,6 +337,52 @@ _______________________________
     }
 }
 
+/*
+LANGUAGE SWITCHER STYLES
+_______________________________
+*/
+.language-switcher-wrapper {
+    position: fixed;
+    left: 50px;
+    bottom: 50px;
+    h2 {
+        font-weight: 300;
+    }
+    .chosen-language {
+        padding-top: 10px;
+        cursor: pointer;
+        &:before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            background: $primary-text-color;
+            bottom: -7px;
+            opacity: 0;
+            transition-duration: $default-transition-duration;
+            transition-timing-function: $header-timing-function;
+        }
+        &:hover, &:focus {
+            &:before {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: $primary-text-color;
+                bottom: -3px;
+                opacity: 1;
+                transition-duration: $default-transition-duration;
+                transition-timing-function: $header-timing-function;
+            }
+        }
+    }
+    .language-list {
+        display: none;
+        h2 {
+            padding: 10px 0;
+        }
+    }
+}
+
 /**
  * ----------------------------------------
  * animation slide-in-blurred-bottom

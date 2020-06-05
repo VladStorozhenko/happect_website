@@ -14,6 +14,7 @@ function showForm() {
     document.querySelector('.close-form').style.display = 'block';
     contactFormButton.removeEventListener('click', showForm);
     contactFormButton.addEventListener('click', hideForm);
+    document.getElementById('contact-name').focus();
 }
 
 function hideForm() {
@@ -73,3 +74,41 @@ telegramOption.addEventListener('click', function() {
 viberOption.addEventListener('click', function() {
     getAnswerWay(document.querySelector('.contact-form'), 'contact-way');
 });
+
+/*
+ Language switcher scripts 
+*/
+let userLang = navigator.language || navigator.userLanguage;
+
+function defineLanguage() {
+    // TODO: ADD LINKS TO APPROPRIATE PAGES
+    if(userLang.includes('ru')) {
+        return 'RU';
+    } else if(userLang.includes('en')) {
+        return 'EN';
+    } else if(userLang.includes('uk')) {
+        return 'UA';
+    } else {
+        return 'EN';
+    }
+ }
+ defineLanguage();
+
+let chosenLanguageButton = document.querySelector('.chosen-language');
+chosenLanguageButton.innerHTML = defineLanguage();
+
+
+function showLanguageChoice() {
+    if(userLang.includes('ru')) {
+        document.querySelector('.language-ru').parentElement.removeChild(document.querySelector('.language-ru'));
+    } else if(userLang.includes('en')) {
+        document.querySelector('.language-en').parentElement.removeChild(document.querySelector('.language-en'));
+    } else if(userLang.includes('uk')) {
+        document.querySelector('.language-ua').parentElement.removeChild(document.querySelector('.language-ua'));
+    } else {
+        document.querySelector('.language-en').parentElement.removeChild(document.querySelector('.language-en'));
+    }
+    document.querySelector('.language-list').style.display = 'block';
+}
+
+chosenLanguageButton.addEventListener('click', showLanguageChoice);
