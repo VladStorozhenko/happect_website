@@ -1,6 +1,23 @@
 /*
  HAPPECT MAIN JS FILE.
 */
+/*
+ Header scripts 
+*/
+
+let header = document.querySelector('.happect-header');
+
+window.addEventListener('scroll', changeHeaderOnScroll);
+
+function changeHeaderOnScroll() {
+    if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        header.style.background = '#231F20';
+    } else {
+        header.style.background = 'rgb(48, 42, 44)';
+    }
+}
+
+
 
 /*
  Contact form scripts 
