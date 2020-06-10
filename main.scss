@@ -44,19 +44,11 @@ a {
 button:focus, a:focus, input:focus, textarea:focus {
     outline: none;
 }
-<<<<<<< HEAD
-.landing, .main-our-skills {
-    position: relative;
-    width: 100%;
-    min-height: 90vh;
-    height: 90vh;
-=======
 .landing, .main-our-skills, .main-how-we-work {
     position: relative;
     width: 100%;
     min-height: 90vh;
     height: 100vh;
->>>>>>> dd4716e... Eighth commit
 }
 .main-about-us {
     position: relative;
@@ -559,22 +551,6 @@ _______________________________
         align-items: center;
         justify-content: space-around;
         position: relative;
-<<<<<<< HEAD
-        width: 80%;
-        margin-left: 10%;
-        .skills-title {
-            text-transform: uppercase;
-            transform: rotate(-90deg);
-            transform-origin: left top 50%;
-            position: absolute;
-            left: 0;
-            padding: 5px;
-            border-bottom: 1px solid $primary-text-color;
-            width: 100px;
-            text-align: center;
-        }
-        .skills {
-=======
         .skill-title-wrapper {
             position: absolute;
             h2 {
@@ -585,20 +561,14 @@ _______________________________
                 text-indent: 1.5em;
             }
         }
-
         .skills {
             position: relative;
             overflow: hidden;
->>>>>>> dd4716e... Eighth commit
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-auto-columns: 1fr;
             width: 80%;
             height: 100%;
-<<<<<<< HEAD
-            margin-left: 15%;
-=======
->>>>>>> dd4716e... Eighth commit
             align-items: center;
             justify-content: space-around;
             text-align: center;
