@@ -6,6 +6,14 @@
 */
 const defaultTransitionDuration = 230; // milliseconds
 const body = document.getElementsByTagName('body')[0];
+
+SmoothScroll({ 
+    stepSize          : 125,
+    keyboardSupport   : true,  // option
+    arrowScroll       : 125,    // [px]
+    accelerationDelta : 10,  // 50
+    accelerationMax   : 15,   // 3
+});
 /*
  Header scripts 
 */
