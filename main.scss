@@ -115,10 +115,19 @@ _______________________________
         position: absolute;
         top: 0;
         right: 0;
-        transform: rotate(180deg);
+        transform: rotate(-90deg);
     }
     .triangle-shadow, .triangle-2-shadow {
         opacity: .3;
+    }
+}
+.main-our-skills {
+    .triangle, .triangle-shadow, .triangle-2, .triangle-2-shadow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: rotate(180deg);
+        height: 100vh;
     }
 }
 /*
@@ -212,6 +221,9 @@ _______________________________
         font-size: 24px;
         cursor: pointer;
         transition-duration: $default-transition-duration;
+        -webkit-box-shadow: -1px 10px 16px -6px rgba(0,0,0,0.74);
+        -moz-box-shadow: -1px 10px 16px -6px rgba(0,0,0,0.74);
+        box-shadow: -1px 10px 16px -6px rgba(0,0,0,0.74);
         &:before {
             content: '';
             position: absolute;
@@ -229,6 +241,9 @@ _______________________________
             z-index: 10;
             font-weight: bold;
             padding: 7px 60px;
+            -webkit-box-shadow: -1px 13px 45px -6px rgba(0,0,0,0.74);
+            -moz-box-shadow: -1px 13px 45px -6px rgba(0,0,0,0.74);
+            box-shadow: -1px 13px 45px -6px rgba(0,0,0,0.74);
             &:before {
                 border-radius: 7px;
                 height: 100%;
@@ -281,7 +296,7 @@ _______________________________
         height: 700px;
         width: 500px;
         background: $primary-background-color;
-        border: 2px solid $primary-text-color;
+        border: 2px double $primary-text-color;
         border-radius: 10px 0 0 10px;
         font-family: 'Open sans', Arial, Helvetica, sans-serif;
         transition: all $default-transition-duration;
@@ -292,7 +307,7 @@ _______________________________
     }
     .contact-form-wrapper-show {
         animation: slide-in-blurred-bottom $default-transition-duration ease;
-        position: absolute;
+        position: fixed;
         opacity: 1;
         display: block;
         right: 50px;
@@ -301,7 +316,7 @@ _______________________________
         height: 700px;
         width: 500px;
         background: $primary-background-color;
-        border: 2px solid $primary-text-color;
+        border: 2px double $primary-text-color;
         border-radius: 10px 0 0 10px;
         font-family: 'Open sans', Arial, Helvetica, sans-serif;
         transition: all $default-transition-duration;
@@ -551,7 +566,8 @@ _______________________________
         }
         .skills {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-auto-columns: 1fr;
             width: 80%;
             height: 100%;
             margin-left: 15%;
