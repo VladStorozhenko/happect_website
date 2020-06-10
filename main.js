@@ -2,9 +2,13 @@
  HAPPECT MAIN JS FILE.
 */
 /*
+ ! GLOBAL VARIABLES 
+*/
+const defaultTransitionDuration = 230; // milliseconds
+const body = document.getElementsByTagName('body')[0];
+/*
  Header scripts 
 */
-
 let header = document.querySelector('.happect-header');
 
 window.addEventListener('scroll', changeHeaderOnScroll);
@@ -13,11 +17,9 @@ function changeHeaderOnScroll() {
     if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         header.style.background = '#231F20';
     } else {
-        header.style.background = 'rgb(48, 42, 44)';
+        header.style.background = '#3A3A3A';
     }
 }
-
-
 
 /*
  Contact form scripts 
@@ -32,6 +34,7 @@ function showForm() {
     contactFormButton.removeEventListener('click', showForm);
     contactFormButton.addEventListener('click', hideForm);
     document.getElementById('contact-name').focus();
+    document.querySelector('.contact-form-wrapper-show').style.display = 'block';
 }
 
 function hideForm() {
@@ -40,6 +43,9 @@ function hideForm() {
     document.querySelector('.close-form').style.display = 'none';
     contactFormButton.removeEventListener('click', hideForm);
     contactFormButton.addEventListener('click', showForm);
+    setTimeout(function(){
+        document.querySelector('.contact-form-wrapper-hide').style.display = 'none';
+    }, defaultTransitionDuration);
 }
 contactFormButton.addEventListener('click', showForm);
 
@@ -135,26 +141,29 @@ function showLanguageChoice() {
     document.querySelector('.language-list-hidden').classList = 'language-list-shown';
     chosenLanguageButton.removeEventListener('click', showLanguageChoice);
     chosenLanguageButton.addEventListener('click', hideLanguageChoice);
+    document.querySelector('.language-list-shown').style.display = 'block';
 }
 
 function hideLanguageChoice() {
     document.querySelector('.language-list-shown').classList = 'language-list-hidden';
     chosenLanguageButton.removeEventListener('click', hideLanguageChoice);
     chosenLanguageButton.addEventListener('click', showLanguageChoice);
-
-    switch (userLang) {
-        case 'ru':
-            document.querySelector('.language-ru').style.display = 'block';
-            break;
-        case 'en':
-            document.querySelector('.language-en').style.display = 'block';
-            break;
-        case 'uk': 
-            document.querySelector('.language-ua').style.display = 'block';
-            break;
-        default: 
-            document.querySelector(`.language-${defaultLangPrefix}`).style.display = 'block'
-    }
+    setTimeout(function(){
+        switch (userLang) {
+            case 'ru':
+                document.querySelector('.language-ru').style.display = 'block';
+                break;
+            case 'en':
+                document.querySelector('.language-en').style.display = 'block';
+                break;
+            case 'uk': 
+                document.querySelector('.language-ua').style.display = 'block';
+                break;
+            default: 
+                document.querySelector(`.language-${defaultLangPrefix}`).style.display = 'block'
+        }
+        document.querySelector('.language-list-hidden').style.display = 'none';
+    }, 50);
 }
 
 chosenLanguageButton.addEventListener('click', showLanguageChoice);
