@@ -50,11 +50,15 @@ button:focus, a:focus, input:focus, textarea:focus {
     min-height: 90vh;
     height: 100vh;
 }
+.main-our-skills {
+    scroll-margin-top: 10vh;
+}
 .main-about-us {
     position: relative;
     width: 100%;
     min-height: 90vh;
     height: 90vh;
+    scroll-margin-top: 5vh;
 }
 .text-bold {
     font-weight: 700;
@@ -153,7 +157,7 @@ _______________________________
         display: flex;
         flex: 2;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         a {
                 position: relative;
                 &:before {
@@ -575,6 +579,86 @@ _______________________________
         }
     }
 }
+
+/*
+HOW WE WORK STYLES 
+_______________________________
+*/
+.main-how-we-work {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .carousel-prev, .carousel-next {
+        font-size: 24px;
+        font-weight: 700;
+        padding: 15px;
+        border-radius: 15px;
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.3);
+        transition: all $default-transition-duration ease;
+        cursor: pointer;
+        user-select: none;
+        &:hover {
+            -webkit-box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.3);
+            -moz-box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.3);
+            box-shadow: 0px 0px 20px 7px rgba(0,0,0,0.3);
+            transform: scale(1.1);
+            transition: all $default-transition-duration ease;
+        }
+    }
+}
+.how-we-work-wrapper {
+    width: 500px;
+    height: 300px;
+    div {
+        background: $primary-text-color;
+        color: $primary-background-color;
+        width: 100%;
+        height: 100%;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        position: relative;
+        text-align: center;
+        // transition: all $default-transition-duration ease;
+        user-select: none;
+        outline: none;
+        cursor: move;
+        .number {
+            position: absolute;
+            font-size: 120px;
+            left: 10px;
+            bottom: 0;
+            padding: 0;
+            opacity: 0.25;
+            color: $primary-background-color;
+        }
+    }
+    .slick-dots {
+        margin-top: 20px !important;
+        li {
+            width: 7px;
+            height: 7px;
+            background-color: white;
+            opacity: .25;
+            border-radius: 50%;
+            transition: all $default-transition-duration ease;
+            &.slick-active {
+                transition: all $default-transition-duration ease;
+                opacity: .75;
+            }
+            button {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        }
+    }
 
 /**
  * ----------------------------------------

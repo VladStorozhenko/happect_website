@@ -2,17 +2,31 @@
  HAPPECT MAIN JS FILE.
 */
 /*
+    HOW WE WORK SCRIPTS 
+*/
+
+// setting up the owl carousel
+$('.how-we-work-wrapper').slick({
+    arrows: true,
+    prevArrow: $('.carousel-prev'),
+    nextArrow: $('.carousel-next'),
+    dots: true,
+    autoplay: true
+  });
+/*
  ! GLOBAL VARIABLES 
 */
 const defaultTransitionDuration = 230; // milliseconds
 const body = document.getElementsByTagName('body')[0];
 
 SmoothScroll({ 
-    stepSize          : 125,
-    keyboardSupport   : true,  // option
+    stepSize          : 120,
+    animationTime     : 600,    // [ms]
+    keyboardSupport   : true,   // option
     arrowScroll       : 125,    // [px]
-    accelerationDelta : 10,  // 50
-    accelerationMax   : 15,   // 3
+    accelerationDelta : 50, 
+    accelerationMax   : 3,
+    pulseScale       : 4   
 });
 /*
  Header scripts 
@@ -175,3 +189,4 @@ function hideLanguageChoice() {
 }
 
 chosenLanguageButton.addEventListener('click', showLanguageChoice);
+

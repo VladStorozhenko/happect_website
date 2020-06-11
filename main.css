@@ -46,11 +46,16 @@ button:focus, a:focus, input:focus, textarea:focus {
   height: 100vh;
 }
 
+.main-our-skills {
+  scroll-margin-top: 10vh;
+}
+
 .main-about-us {
   position: relative;
   width: 100%;
   min-height: 90vh;
   height: 90vh;
+  scroll-margin-top: 5vh;
 }
 
 .text-bold {
@@ -174,9 +179,9 @@ _______________________________
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .happect-header .happect-nav a {
@@ -750,6 +755,121 @@ _______________________________
   -ms-flex-pack: distribute;
       justify-content: space-around;
   text-align: center;
+}
+
+/*
+HOW WE WORK STYLES 
+_______________________________
+*/
+.main-how-we-work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.main-how-we-work .carousel-prev, .main-how-we-work .carousel-next {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 230ms ease;
+  transition: all 230ms ease;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-how-we-work .carousel-prev:hover, .main-how-we-work .carousel-next:hover {
+  -webkit-box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 20px 7px rgba(0, 0, 0, 0.3);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 230ms ease;
+  transition: all 230ms ease;
+}
+
+.how-we-work-wrapper {
+  width: 500px;
+  height: 300px;
+}
+
+.how-we-work-wrapper div {
+  background: #FBFAF8;
+  color: #231F20;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 24px;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  cursor: move;
+}
+
+.how-we-work-wrapper div .number {
+  position: absolute;
+  font-size: 120px;
+  left: 10px;
+  bottom: 0;
+  padding: 0;
+  opacity: 0.25;
+  color: #231F20;
+}
+
+.how-we-work-wrapper .slick-dots {
+  margin-top: 20px !important;
+}
+
+.how-we-work-wrapper .slick-dots li {
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  opacity: .25;
+  border-radius: 50%;
+  -webkit-transition: all 230ms ease;
+  transition: all 230ms ease;
+}
+
+.how-we-work-wrapper .slick-dots li.slick-active {
+  -webkit-transition: all 230ms ease;
+  transition: all 230ms ease;
+  opacity: .75;
+}
+
+.how-we-work-wrapper .slick-dots li button {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 /**
