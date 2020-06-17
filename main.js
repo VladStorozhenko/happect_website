@@ -147,15 +147,20 @@ chosenLanguageButton.innerHTML = defineLanguage();
 
 
 function showLanguageChoice() { 
+    console.log('hello');
+    console.log(userLang);
     switch (userLang) {
         case 'ru':
             document.querySelector('.language-ru').style.display = 'none';
+            console.log('hello-ru');
             break;
         case 'en':
             document.querySelector('.language-en').style.display = 'none';
+            console.log('hello-en');
             break;
         case 'uk': 
             document.querySelector('.language-ua').style.display = 'none';
+            console.log('hello-ua');
             break;
         default: 
             document.querySelector(`.language-${defaultLangPrefix}`).style.display = 'none'
