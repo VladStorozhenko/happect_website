@@ -4,15 +4,6 @@
 /*
     HOW WE WORK SCRIPTS 
 */
-
-// setting up the owl carousel
-$('.how-we-work-wrapper').slick({
-    arrows: true,
-    prevArrow: $('.carousel-prev'),
-    nextArrow: $('.carousel-next'),
-    dots: true,
-    autoplay: true
-  });
 /*
  ! GLOBAL VARIABLES 
 */
