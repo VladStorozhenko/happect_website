@@ -68,7 +68,7 @@ let mailOption = document.getElementById('contact-email');
 let telegramOption = document.getElementById('contact-telegram');
 let viberOption = document.getElementById('contact-viber');
 
-function getAnswerWay(form, name) {
+function getAnswerWay(form, name, appendix = '') {
     let val;
     // get list of radio buttons
     let options = form.elements[name];
@@ -79,26 +79,26 @@ function getAnswerWay(form, name) {
         }
     }
     if(val == 'telegram') {
-        document.getElementById('client-telegram').style.display='block';
-        document.getElementById('client-viber').style.display='none';
-        document.getElementById('client-email').style.display='none';
-        document.getElementById('client-telegram').required = true;
-        document.getElementById('client-viber').required = false;
-        document.getElementById('client-email').required = false;
+        document.getElementById(appendix + 'client-telegram').style.display='block';
+        document.getElementById(appendix + 'client-viber').style.display='none';
+        document.getElementById(appendix + 'client-email').style.display='none';
+        document.getElementById(appendix + 'client-telegram').required = true;
+        document.getElementById(appendix + 'client-viber').required = false;
+        document.getElementById(appendix + 'client-email').required = false;
     } else if(val == 'mail') {
-        document.getElementById('client-email').style.display='block';
-        document.getElementById('client-telegram').style.display='none';
-        document.getElementById('client-viber').style.display='none';
-        document.getElementById('client-email').required = true;
-        document.getElementById('client-telegram').required = false;
-        document.getElementById('client-viber').required = false;
+        document.getElementById(appendix + 'client-email').style.display='block';
+        document.getElementById(appendix + 'client-telegram').style.display='none';
+        document.getElementById(appendix + 'client-viber').style.display='none';
+        document.getElementById(appendix + 'client-email').required = true;
+        document.getElementById(appendix + 'client-telegram').required = false;
+        document.getElementById(appendix + 'client-viber').required = false;
     } else if(val == 'viber') {
-        document.getElementById('client-viber').style.display='block';
-        document.getElementById('client-telegram').style.display='none';
-        document.getElementById('client-email').style.display='none';
-        document.getElementById('client-viber').required = true;
-        document.getElementById('client-telegram').required = false;
-        document.getElementById('client-email').required = false;
+        document.getElementById(appendix + 'client-viber').style.display='block';
+        document.getElementById(appendix + 'client-telegram').style.display='none';
+        document.getElementById(appendix + 'client-email').style.display='none';
+        document.getElementById(appendix + 'client-viber').required = true;
+        document.getElementById(appendix + 'client-telegram').required = false;
+        document.getElementById(appendix + 'client-email').required = false;
     }
 }
 
@@ -181,4 +181,19 @@ function hideLanguageChoice() {
 }
 
 chosenLanguageButton.addEventListener('click', showLanguageChoice);
+
+// ! MAIN FORM
+
+let mainMailOption, mainTelegramOption, mainViberOption;
+mainMailOption = document.getElementById('main-contact-email');
+mainTelegramOption = document.getElementById('main-contact-telegram');
+mainViberOption = document.getElementById('main-contact-viber');
+
+mainMailOption.addEventListener('click', mainFormChooseAnswerMethod);
+mainTelegramOption.addEventListener('click', mainFormChooseAnswerMethod);
+mainViberOption.addEventListener('click', mainFormChooseAnswerMethod);
+
+function mainFormChooseAnswerMethod() {
+    getAnswerWay(document.querySelector('.main-form'), 'main-contact-way', 'main-');
+}
 

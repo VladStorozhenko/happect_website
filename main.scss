@@ -15,7 +15,6 @@ $primary-text-color: #FBFAF8;
 $default-transition-duration: 230ms;
 $header-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6);
 $triangle-color: #3A3A3A;
-
 /*
 GENERAL STYLES
 _______________________________
@@ -32,6 +31,7 @@ body {
     background-color: $primary-background-color;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     color: $primary-text-color;
+    overflow-x: hidden;
 }
 main {
     position: relative;
@@ -51,7 +51,7 @@ button:focus, a:focus, input:focus, textarea:focus {
 .main-how-we-work {
     position: relative;
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
 }
 .main-our-skills {
     position: relative;
@@ -167,6 +167,7 @@ _______________________________
     background: $triangle-color;
     z-index: 10;
     padding: 20px 30px 20px 30px;
+    max-width: 100%;
     height: 5vh;
     transition: all $default-transition-duration $header-timing-function;
     z-index: 999;
@@ -222,6 +223,7 @@ _______________________________
     h1 {
         font-size: 64px;
         font-weight: 500;
+        text-align: center;
     }
     .happect-chain {
         width: 90%;
@@ -619,8 +621,8 @@ _______________________________
         text-align: center;
     }
     .work-grid {
-        height: 100%;
         width: 70%;
+        height: 80vh;
         margin-left: 15%;
         margin-top: 30px;
         display: grid;
@@ -690,9 +692,219 @@ _______________________________
         }
     }
 }
+/*
+MAIN FORM
+_______________________________
+*/
+.form-wrapper {
+  h1 {
+    text-align: center;
+    margin: 75px 0;
+    font-size: 64px;
+  }
+  h3 {
+    font-weight: 200;
+    padding: 10px 0;
+    letter-spacing: 0.1em;
+  }
+  .label-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+  }
+  .radio-container {
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    height: 100%;
+    font-size: 18px;
+    letter-spacing: 0.4em;
+    .line {
+      position: absolute;
+      bottom: -5px;
+      width: 100%;
+      border-bottom: 3px solid rgb(99, 87, 90);
+      transition: all $default-transition-duration ease;
+    }
+    input:checked ~ .line {
+      position: absolute;
+      bottom: -3px;
+      width: 100%;
+      border-bottom: 3px solid rgb(199, 187, 190);   
+    }
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+    margin-top: 10vh;
+    width: 100%;
+    .main-form {
+      width: 70%;
+      margin-left: 15%;
+      .form-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .col-1, .col-2 {
+          width: 45%;
+        }
+      }
+      #main-contact-submit {
+        margin-top: 50px;
+        cursor: pointer;
+        padding: 5px;
+        width: 100%;
+        border-top: 1px solid rgb(99, 87, 90);
+        border-bottom: 1px solid rgb(99, 87, 90);
+        transition: all $default-transition-duration ease;            
+        &:focus, &:hover {
+            border-bottom: 3px solid rgb(199, 187, 190);   
+            border-top: 3px solid rgb(199, 187, 190); 
+        }
+      }
+      input {
+        background: none;
+        border: none;
+        width: 100%;
+        border-bottom: 3px solid rgb(99, 87, 90);
+        padding: 10px 0;
+        color: $primary-text-color;
+        transition: all $default-transition-duration ease;
+        font-size: 20px;
+    }
+    #project-info {
+      background: none;
+      border: none;
+      width: 100%;
+      border-bottom: 3px solid rgb(99, 87, 90);
+      color: $primary-text-color;
+      transition: all $default-transition-duration ease;
+      font-size: 20px;
+      height: 100%;
+      resize: vertical;
+      max-height: 50vh;
+      min-height: 5vh;
+      &:focus {
+        border-bottom: 3px solid rgb(199, 187, 190);   
+    }
+    }
+    input, textarea {
+        &:focus {
+            border-bottom: 3px solid rgb(199, 187, 190);                
+        }
+    }
+    .input-wrapper {
+        position: relative;
+    }
+    .contact-float {
+        position: absolute;
+        pointer-events: none;
+        left: 0;
+        top: 15px;
+        transition: 0.2s ease all;
+    }
+    #main-contact-name:focus ~ .contact-name-float,
+    #main-contact-name:not(:focus):valid ~ .contact-name-float {
+        top: -10px;
+        font-size: 14px;
+        opacity: .6;
+    }
+    .answer-question {
+        margin: 20px 0;
+    }
+    .where-to-answer {
+        padding: 50px 0;
+        display: flex;
+        justify-content: space-evenly;
+        input {
+            display: none;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 99;
+        }
+        svg {
+            width: 30px;
+            height: 30px;
+            transition: all $default-transition-duration ease;
+            cursor: pointer;
+        }
+        input:checked ~ .radio-mark svg {
+            width: 35px;
+            height: 35px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $primary-text-color;
+            transform: translateY(-5px);
+            transition: all $default-transition-duration ease;
+        }
+    }
+    #main-client-telegram, #main-client-viber {
+        display: none;
+        &::placeholder {
+            font-size: 16px;
+            opacity: .8;
+            color: $primary-text-color;
+        }
+    }
+    #main-client-email {
+        &::placeholder {
+            font-size: 16px;
+            opacity: .8;
+            color: $primary-text-color;
+        }           
+    }
+    }
+}
+/*
+FOOTER STYLES
+_______________________________
+*/
+.happect-footer {
+  margin-top: 10vh;
+  width: 100%;
+  padding: 50px 0;
+  .happect-logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .copyright {
+    text-align: center;
+    padding: 30px;
+    opacity: 0.75;
+  }
+}
+// ! MEDIA QUERIES
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  // header
+  .happect-header {
+    justify-content: space-around;
+    max-width: calc(100vw - 30px);
+    padding: 10px;
+    .happect-logo-area {
+      flex: 1;
+      justify-content: center;
+    }
+    .happect-nav {
+      flex: 2;
+    }
+  }
 
-
-
+  // skills 
+  .skills-grid {
+    .skills-design, .skills-code, .skills-cms {
+      .skill-title-wrapper {
+          h2 {
+              font-size: 75px;
+          }
+      }
+    }
+  }
+  .skill-title {
+    font-size: 75px;
+  }
+}
 /**
  * ----------------------------------------
  * animation scale-in-center
