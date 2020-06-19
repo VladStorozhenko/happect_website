@@ -32,6 +32,7 @@ body {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     color: $primary-text-color;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 main {
     position: relative;
@@ -631,6 +632,7 @@ _______________________________
         justify-items: center;
         align-items: center;
         div {
+            cursor: pointer;
             position: relative;
             width: 100%;
             height: 100%;
@@ -880,7 +882,7 @@ _______________________________
   // header
   .happect-header {
     justify-content: space-around;
-    max-width: calc(100vw - 30px);
+    max-width: calc(100vw - 20px);
     padding: 10px;
     .happect-logo-area {
       flex: 1;
@@ -891,18 +893,51 @@ _______________________________
     }
   }
 
+  //landing 
+  .main-landing h1 {
+    width: 80%;
+  }
+
+  // about us 
+  .about-us-text-wrapper {
+    top: 200px;
+  }
+
   // skills 
   .skills-grid {
     .skills-design, .skills-code, .skills-cms {
       .skill-title-wrapper {
           h2 {
-              font-size: 75px;
+              font-size: 65px;
           }
       }
     }
   }
   .skill-title {
     font-size: 75px;
+  }
+  .main-how-we-work {
+    .work-grid {
+      width: 80%;
+      margin-left: 10%;
+      div {
+        font-size: 30px;
+        svg {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  // form 
+  .form-wrapper {
+    .label-container {
+      flex-direction: column;
+      label {
+        margin: 10px 0;
+      }
+    }
   }
 }
 /**
