@@ -20,7 +20,7 @@ GENERAL STYLES
 _______________________________
 */
 html {
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 * {
     padding: 0;
@@ -33,6 +33,8 @@ body {
     color: $primary-text-color;
     overflow-x: hidden;
     box-sizing: border-box;
+    animation: fadeInAnimation $header-timing-function 1s;
+    animation-fill-mode: forwards; 
 }
 main {
     position: relative;
@@ -941,8 +943,218 @@ _______________________________
     }
   }
 }
-@media screen and (max-width: 1440px) and (min-width: 1024px) {
-  
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  // header
+  .happect-header {
+    justify-content: space-around;
+    max-width: calc(100vw - 20px);
+    padding: 10px;
+    .happect-logo-area {
+      flex: 1;
+      justify-content: center;
+    }
+    .happect-nav {
+      flex: 2;
+    }
+  }
+
+  //landing 
+
+  .main-landing {
+    top: 100px;
+  }
+
+    // about us 
+    .about-us-text-wrapper {
+      top: 200px;
+      width: 65%;
+    }
+
+  // skills 
+  .skills-grid {
+    .skills-design, .skills-code, .skills-cms {
+      .skill-title-wrapper {
+          h2 {
+              font-size: 50px;
+          }
+      }
+    }
+  }
+
+  .main-how-we-work {
+    .work-grid {
+      width: 80%;
+      margin-left: 10%;
+      div {
+        font-size: 25px;
+        svg {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+  // form 
+  .form-wrapper {
+    
+    .label-container {
+      flex-direction: column;
+      label {
+        margin: 10px 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  // header
+  .happect-header {
+    justify-content: space-evenly;
+    align-content: center;
+    max-width: calc(100vw - 20px);
+    padding: 10px;
+    .happect-logo-area {
+      justify-content: center;
+      flex: 0;
+    }
+    .happect-nav {
+      flex: 0;
+      .header-link {
+        display: none;
+      }
+    }
+    .happect-nav-shown {
+      display: flex;
+      animation: fadeInAnimation 1s ease;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: calc(95vh - 20px);
+      width: 100%;
+      background: $primary-background-color;
+      position: absolute;
+      left: 0;
+      top: calc(5vh + 20px);
+    }
+  }
+
+  //landing 
+
+  .main-landing {
+    top: 100px;
+    h1 {
+      font-size: 36px;
+    }
+    .happect-chain {
+      padding-left: 0;
+     h2 {
+        font-size: 20px;
+     }
+    }
+  }
+
+    // about us 
+    .about-us-text-wrapper {
+      top: 200px;
+      width: 80%;
+      left: 10%;
+      h1 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+
+  // skills 
+  .main-our-skills {
+    height: auto;
+    min-height: 0;
+    h1 {
+      font-size: 36px;
+    }
+  }
+  .skills-grid {
+    .skills-design, .skills-code, .skills-cms {
+      border-bottom: 1px solid $primary-text-color;
+      margin: 10px 0;
+      display: grid;
+      grid-template-columns: 40% 60%;
+      .skills {
+        grid-template-columns: 1fr;
+        width: 100%;
+        h2 {
+          font-size: 24px;
+          padding: 10px 0;
+        }
+      }
+      .skill-title-wrapper {
+        position: relative;
+        // top: 0;
+        // left: 50%;
+        // transform: translateX(-50%);
+          h2 {
+              font-size: 20px;
+              letter-spacing: 0.5em;
+              text-indent: 0.5em;
+          }
+      }
+    }
+  }
+  .skills-grid {
+    .skills-cms {
+      border-bottom: 0px solid black !important;
+    }
+  }
+
+  .main-how-we-work {
+    h1 {
+      font-size: 36px;
+    }
+    height: auto;
+    .work-grid {
+      height: auto;
+      width: 80%;
+      margin-left: 10%;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      div {
+        font-size: 25px;
+        width: 200px;
+        height: 200px;
+        svg {
+          width: 70px;
+          height: 70px;
+        }
+      }
+    }
+  }
+  // form 
+  .form-wrapper {
+    h1 {
+      font-size: 36px;
+    }
+    .main-form {
+      width: 90%;
+      margin-left: 5%;
+      .form-content {
+        flex-direction: column;
+        .col-1, .col-2 {
+          width: 100%;
+        }
+      }
+      #project-info {
+        margin-top: 50px;
+        padding: 10px 0;
+        height: 200px;
+      }
+    }
+    .label-container {
+      flex-direction: column;
+      label {
+        margin: 10px 0;
+      }
+    }
+  }
 }
 /**
  * ----------------------------------------
@@ -1415,3 +1627,11 @@ _______________________________
               box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
     }
   }
+  @keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 

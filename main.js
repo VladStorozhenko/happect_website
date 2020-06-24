@@ -196,4 +196,3 @@ mainViberOption.addEventListener('click', mainFormChooseAnswerMethod);
 function mainFormChooseAnswerMethod() {
     getAnswerWay(document.querySelector('.main-form'), 'main-contact-way', 'main-');
 }
-
