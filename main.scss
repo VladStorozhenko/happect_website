@@ -44,9 +44,10 @@ a {
     text-decoration: none;
     color: $primary-text-color;
 }
-button:focus, a:focus, input:focus, textarea:focus {
-    outline: none;
-}
+*:focus, *:hover {
+  outline: 0;
+  outline: none;
+  }
 .landing {
     position: relative;
     width: 100%;
@@ -623,6 +624,9 @@ _______________________________
     h3 {
         font-weight: 200;
         text-align: center;
+        &:before {
+          content: 'Hover ';
+        }
     }
     .work-grid {
         width: 70%;
@@ -644,6 +648,7 @@ _______________________________
             align-items: center;
             text-align: center;
             font-size: 36px;
+            user-select: none;
             .number {
                 position: absolute;
                 bottom: 10px;
@@ -652,6 +657,7 @@ _______________________________
                 transition: all $default-transition-duration ease;
             }
             .info {
+              user-select: none;
                 display: flex;
                 text-align: center;
                 font-size: 24px;
@@ -1008,11 +1014,17 @@ _______________________________
   }
 
   .main-how-we-work {
+    h3 {
+      &:before {
+        content: 'Click ';
+      }
+    }
     .work-grid {
       width: 80%;
       margin-left: 10%;
       div {
         font-size: 25px;
+        user-select: none;
         svg {
           width: 100px;
           height: 100px;
@@ -1172,6 +1184,11 @@ _______________________________
   .main-how-we-work {
     h1 {
       font-size: 36px;
+    }
+    h3 {
+      &:before {
+        content: 'Click ';
+      }
     }
     height: auto;
     .work-grid {

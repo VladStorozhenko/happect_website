@@ -43,7 +43,8 @@ a {
   color: #FBFAF8;
 }
 
-button:focus, a:focus, input:focus, textarea:focus {
+*:focus, *:hover {
+  outline: 0;
   outline: none;
 }
 
@@ -818,6 +819,10 @@ _______________________________
   text-align: center;
 }
 
+.main-how-we-work h3:before {
+  content: 'Hover ';
+}
+
 .main-how-we-work .work-grid {
   width: 70%;
   height: 80vh;
@@ -851,6 +856,10 @@ _______________________________
           align-items: center;
   text-align: center;
   font-size: 36px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .main-how-we-work .work-grid div .number {
@@ -863,6 +872,10 @@ _______________________________
 }
 
 .main-how-we-work .work-grid div .info {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1300,12 +1313,19 @@ _______________________________
   .skills-grid .skills-design .skill-title-wrapper h2, .skills-grid .skills-code .skill-title-wrapper h2, .skills-grid .skills-cms .skill-title-wrapper h2 {
     font-size: 50px;
   }
+  .main-how-we-work h3:before {
+    content: 'Click ';
+  }
   .main-how-we-work .work-grid {
     width: 80%;
     margin-left: 10%;
   }
   .main-how-we-work .work-grid div {
     font-size: 25px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
   }
   .main-how-we-work .work-grid div svg {
     width: 100px;
@@ -1466,6 +1486,9 @@ _______________________________
   }
   .main-how-we-work h1 {
     font-size: 36px;
+  }
+  .main-how-we-work h3:before {
+    content: 'Click ';
   }
   .main-how-we-work .work-grid {
     height: auto;
