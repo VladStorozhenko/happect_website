@@ -13,6 +13,7 @@ _______________________________
 */
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -1197,6 +1198,24 @@ _______________________________
 }
 
 @media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .contacts .contact-form-info {
+    font-size: 16px;
+  }
+  .contacts .contact-form-wrapper-hide {
+    height: 60vh;
+    width: 400px;
+  }
+  .contacts .contact-form-wrapper-show {
+    height: 60vh;
+    width: 400px;
+  }
+  .contacts .contact-form .answer-question {
+    font-size: 16px;
+  }
+  .contacts .contact-form #contact-message {
+    margin-top: 20px;
+    max-height: 150px;
+  }
   .happect-header {
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -1304,6 +1323,39 @@ _______________________________
 }
 
 @media screen and (max-width: 767px) {
+  .contact-button-wrapper {
+    z-index: 999;
+  }
+  .contacts .contact-form-info {
+    font-size: 16px;
+  }
+  .contacts .contact-form-wrapper-hide {
+    height: 90vh;
+    width: 100vw;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+  }
+  .contacts .contact-form-wrapper-show {
+    height: 92vh;
+    border-radius: 0;
+    width: 100vw;
+    left: 0;
+    border: none;
+    right: 0;
+    padding: 5px;
+    bottom: 0;
+  }
+  .contacts .contact-form .answer-question {
+    font-size: 16px;
+  }
+  .contacts .contact-form #contact-message {
+    margin-top: 20px;
+    max-height: 150px;
+  }
   .happect-header {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;

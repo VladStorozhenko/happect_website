@@ -21,6 +21,7 @@ _______________________________
 */
 html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 * {
     padding: 0;
@@ -881,6 +882,29 @@ _______________________________
 }
 // ! MEDIA QUERIES
 @media screen and (max-width: 1440px) and (min-width: 1024px) {
+  //s
+   .contacts {
+     .contact-form-info {
+       font-size: 16px;
+     }
+    .contact-form-wrapper-hide {
+        height: 60vh;
+        width: 400px;
+    }
+    .contact-form-wrapper-show {
+        height: 60vh;
+        width: 400px;
+    }
+    .contact-form {
+      .answer-question {
+        font-size: 16px;
+      }
+      #contact-message {
+        margin-top: 20px;
+        max-height: 150px;
+      }
+    }
+}
   // header
   .happect-header {
     justify-content: space-around;
@@ -942,6 +966,8 @@ _______________________________
       }
     }
   }
+
+
 }
 @media screen and (max-width: 1023px) and (min-width: 768px) {
   // header
@@ -1006,6 +1032,43 @@ _______________________________
   }
 }
 @media screen and (max-width: 767px) {
+  .contact-button-wrapper {
+    z-index: 999;
+  }
+  .contacts {
+    .contact-form-info {
+      font-size: 16px;
+    }
+   .contact-form-wrapper-hide {
+       height: 90vh;
+       width: 100vw;
+       left: 0;
+       border: none;
+       border-radius: 0;
+       right: 0;
+       bottom: 0;
+       padding: 5px;
+   }
+   .contact-form-wrapper-show {
+      height: 92vh;
+      border-radius: 0;
+      width: 100vw;
+      left: 0;
+       border: none;
+       right: 0;
+       padding: 5px;
+       bottom: 0;
+   }
+   .contact-form {
+     .answer-question {
+       font-size: 16px;
+     }
+     #contact-message {
+       margin-top: 20px;
+       max-height: 150px;
+     }
+   }
+}
   // header
   .happect-header {
     justify-content: space-evenly;
