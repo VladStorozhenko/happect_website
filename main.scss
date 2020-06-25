@@ -482,6 +482,7 @@ _______________________________
     position: fixed;
     left: 50px;
     bottom: 50px;
+    // z-index: -2;
     h2 {
         font-weight: 300;
     }
@@ -708,6 +709,10 @@ MAIN FORM
 _______________________________
 */
 .form-wrapper {
+  .answer-question {
+    font-size: 24px;
+    font-weight: 200;
+  }
   h1 {
     text-align: center;
     margin: 75px 0;
@@ -1214,6 +1219,9 @@ _______________________________
       font-size: 36px;
     }
     .main-form {
+      .answer-question {
+        font-size: 16px;
+      }
       width: 90%;
       margin-left: 5%;
       .form-content {

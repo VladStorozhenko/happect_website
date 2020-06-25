@@ -115,43 +115,11 @@ viberOption.addEventListener('click', function() {
 /*
  Language switcher scripts 
 */
-let userLang = navigator.language || navigator.userLanguage;
-// default language
-let defaultLang = 'EN';
-let defaultLangPrefix = 'en';
-
-function defineLanguage() {
-    // TODO: ADD LINKS TO APPROPRIATE PAGES
-    if(userLang.includes('ru')) {
-        return 'RU';
-    } else if(userLang.includes('en')) {
-        return 'EN';
-    } else if(userLang.includes('uk')) {
-        return 'UA';
-    } else {
-        return defaultLang;
-    }
- }
- defineLanguage();
 
 let chosenLanguageButton = document.querySelector('.chosen-language');
-chosenLanguageButton.innerHTML = defineLanguage();
 
 
 function showLanguageChoice() { 
-    switch (userLang) {
-        case 'ru':
-            document.querySelector('.language-ru').style.display = 'none';
-            break;
-        case 'en':
-            document.querySelector('.language-en').style.display = 'none';
-            break;
-        case 'uk': 
-            document.querySelector('.language-ua').style.display = 'none';
-            break;
-        default: 
-            document.querySelector(`.language-${defaultLangPrefix}`).style.display = 'none'
-    }
     document.querySelector('.language-list-hidden').classList = 'language-list-shown';
     chosenLanguageButton.removeEventListener('click', showLanguageChoice);
     chosenLanguageButton.addEventListener('click', hideLanguageChoice);
@@ -163,19 +131,6 @@ function hideLanguageChoice() {
     chosenLanguageButton.removeEventListener('click', hideLanguageChoice);
     chosenLanguageButton.addEventListener('click', showLanguageChoice);
     setTimeout(function(){
-        switch (userLang) {
-            case 'ru':
-                document.querySelector('.language-ru').style.display = 'block';
-                break;
-            case 'en':
-                document.querySelector('.language-en').style.display = 'block';
-                break;
-            case 'uk': 
-                document.querySelector('.language-ua').style.display = 'block';
-                break;
-            default: 
-                document.querySelector(`.language-${defaultLangPrefix}`).style.display = 'block'
-        }
         document.querySelector('.language-list-hidden').style.display = 'none';
     }, 50);
 }

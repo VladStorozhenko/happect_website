@@ -947,6 +947,11 @@ _______________________________
   width: 100%;
 }
 
+.form-wrapper .answer-question {
+  font-size: 24px;
+  font-weight: 200;
+}
+
 .form-wrapper h1 {
   text-align: center;
   margin: 75px 0;
@@ -1514,6 +1519,9 @@ _______________________________
   .form-wrapper .main-form {
     width: 90%;
     margin-left: 5%;
+  }
+  .form-wrapper .main-form .answer-question {
+    font-size: 16px;
   }
   .form-wrapper .main-form .form-content {
     -webkit-box-orient: vertical;
