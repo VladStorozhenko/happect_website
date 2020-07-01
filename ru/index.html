@@ -18,10 +18,19 @@
          .main-how-we-work h3:before {
              content: 'Наведите '
          } 
+         @media screen and (min-width: 1024px) {
+            .about-us-text-wrapper {
+                top: 150px;
+            }
+         }
          @media screen and (max-width: 1023px) {
+            .about-us-text-wrapper {
+                top: 5vh;
+            }
             .main-how-we-work h3:before {
              content: 'Кликните '
          } 
+
          }
      </style>
 </head>

@@ -658,22 +658,22 @@ _______________________________
                 transition: all $default-transition-duration ease;
             }
             .info {
-              user-select: none;
+                user-select: none;
                 display: flex;
                 text-align: center;
                 font-size: 24px;
                 opacity: 0;
                 position: absolute;
-                height: 100%;
                 transition: all $default-transition-duration ease;
-                transform: rotate(45deg);
+                bottom: 0;
+                transform: translateY(10px);
             }
             p {
                 transition: all $default-transition-duration ease;
                 opacity: 1;
-                transform: rotate(45deg);
+                align-self: flex-end;
             }
-            &:hover {
+            &:hover { 
                 .info {
                     // animation: slit-in-diagonal-2  600ms cubic-bezier(0,1.66,1,-0.49);
                     animation: slide-in-bck-center 600ms cubic-bezier(0,1.66,1,-0.49);
@@ -683,22 +683,26 @@ _______________________________
                     justify-content: center;
                     transform: scale(1.2);
                     font-size: 24px;
+                    cursor: help;
                 }
                 p {
                     opacity: 0;
                     position: absolute;
                     transition: all $default-transition-duration ease;
-                    transform: rotate(0deg);
+                    transform: translateY(-50px);
                 }
                 .number {
                     opacity: 0.7;
                     transition: all $default-transition-duration ease;
                 }
+                svg {
+                  opacity: 0.7;
+                  transition: all $default-transition-duration ease;
+                }
             }
             svg {
                 position: absolute;
                 z-index: -10;
-                opacity: 0.5;
                 width: 100%;
             }
         }
@@ -893,10 +897,11 @@ _______________________________
 }
 // ! MEDIA QUERIES
 @media screen and (max-width: 1440px) and (min-width: 1024px) {
-  //s
+  // contacts 
    .contacts {
      .contact-form-info {
-       font-size: 16px;
+       font-size: 12px;
+       margin-bottom: 10px;
      }
     .contact-form-wrapper-hide {
         height: 60vh;
@@ -907,12 +912,33 @@ _______________________________
         width: 400px;
     }
     .contact-form {
-      .answer-question {
+      .contact-float {
+        top: 5px;
         font-size: 16px;
       }
+      .answer-question {
+        font-size: 12px;
+      }
+      .where-to-answer {
+        label {
+          svg {
+            width: 20px;
+
+          }
+        }
+        input:checked ~ .radio-mark {
+          svg {
+            width: 25px;
+          }
+        }
+      }
+      input {
+        font-size: 16px;
+        padding: 5px 0;
+      }
       #contact-message {
-        margin-top: 20px;
-        max-height: 150px;
+        margin-top: 10px;
+        max-height: 120px;
       }
     }
 }
@@ -931,6 +957,12 @@ _______________________________
   }
 
   //landing 
+  .landing {
+    height: 100vh;
+  }
+  .main-landing {
+    top: 100px;
+  }
   .main-landing h1 {
     width: 80%;
   }
@@ -942,6 +974,11 @@ _______________________________
   }
 
   // skills 
+  .main-our-skills {
+    h1 {
+      margin: 20px 0;
+    }
+  }
   .skills-grid {
     .skills-design, .skills-code, .skills-cms {
       .skill-title-wrapper {
@@ -981,6 +1018,51 @@ _______________________________
 
 }
 @media screen and (max-width: 1023px) and (min-width: 768px) {
+    // contacts 
+    .contacts {
+      .contact-form-info {
+        font-size: 12px;
+        margin-bottom: 10px;
+      }
+     .contact-form-wrapper-hide {
+         height: 60vh;
+         width: 400px;
+     }
+     .contact-form-wrapper-show {
+         height: 60vh;
+         width: 400px;
+     }
+     .contact-form {
+       .contact-float {
+         top: 5px;
+         font-size: 16px;
+       }
+       .answer-question {
+         font-size: 12px;
+       }
+       .where-to-answer {
+         label {
+           svg {
+             width: 20px;
+ 
+           }
+         }
+         input:checked ~ .radio-mark {
+           svg {
+             width: 25px;
+           }
+         }
+       }
+       input {
+         font-size: 16px;
+         padding: 5px 0;
+       }
+       #contact-message {
+         margin-top: 10px;
+         max-height: 120px;
+       }
+     }
+ }
   // header
   .happect-header {
     justify-content: space-around;
@@ -996,7 +1078,9 @@ _______________________________
   }
 
   //landing 
-
+  .landing {
+    height: 100vh;
+  }
   .main-landing {
     top: 100px;
   }
@@ -1008,6 +1092,11 @@ _______________________________
     }
 
   // skills 
+  .main-our-skills {
+    h1 {
+      margin: 20px 0;
+    }
+  }
   .skills-grid {
     .skills-design, .skills-code, .skills-cms {
       .skill-title-wrapper {
