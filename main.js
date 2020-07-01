@@ -48,7 +48,10 @@ function showForm() {
     contactFormButton.addEventListener('click', hideForm);
     document.getElementById('contact-name').focus();
     document.querySelector('.contact-form-wrapper-show').style.display = 'block';
-    document.querySelector('.body').style.overflowY = 'hidden';
+    document.getElementsByTagName('html')[0].classList.add('no-scroll');
+    if(window.innerHeight < 700) {
+        header.classList = 'no-header';
+    }
 }
 
 function hideForm() {
@@ -58,7 +61,10 @@ function hideForm() {
     contactFormButton.removeEventListener('click', hideForm);
     contactFormButton.addEventListener('click', showForm);
     document.getElementById('contact-name').blur();
-    document.querySelector('.body').style.overflowY = 'auto';
+    document.getElementsByTagName('html')[0].classList.remove('no-scroll');
+    if(window.innerHeight < 700) {
+        header.classList = 'happect-header';
+    }
     setTimeout(function(){
         document.querySelector('.contact-form-wrapper-hide').style.display = 'none';
     }, defaultTransitionDuration);
