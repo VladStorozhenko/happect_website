@@ -359,6 +359,7 @@ _______________________________
         }
     }
     .contact-form-wrapper-show {
+        overflow-y: scroll;
         animation: puff-in-center $default-transition-duration ease;
         position: fixed;
         opacity: 1;
