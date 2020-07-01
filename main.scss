@@ -78,6 +78,25 @@ a {
     font-weight: 700;
     padding: 0 3px;
 }
+.no-scroll {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.no-header {
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  background: $triangle-color;
+  z-index: 10;
+  padding: 20px 30px 20px 30px;
+  max-width: 100%;
+  transition: all $default-transition-duration $header-timing-function;
+  * {
+    display: none;
+  }
+}
 /*
 TRIANGLES STYLES
 _______________________________
@@ -175,7 +194,6 @@ _______________________________
     max-width: 100%;
     height: 5vh;
     transition: all $default-transition-duration $header-timing-function;
-    z-index: 999;
     .happect-logo-area {
         display: flex;
         align-items: center;
@@ -1150,7 +1168,7 @@ _______________________________
       font-size: 16px;
     }
    .contact-form-wrapper-hide {
-       height: 90vh;
+       height: 100vh;
        width: 100vw;
        left: 0;
        border: none;
@@ -1160,7 +1178,7 @@ _______________________________
        padding: 5px;
    }
    .contact-form-wrapper-show {
-      height: 92vh;
+      height: 100vh;
       border-radius: 0;
       width: 100vw;
       left: 0;
@@ -1336,6 +1354,52 @@ _______________________________
       }
     }
   }
+}
+@media screen and (max-height: 700px) {
+  .contacts {
+    .contact-form-info {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+   .contact-form-wrapper-hide {
+       height: 80vh;
+       width: 400px;
+   }
+   .contact-form-wrapper-show {
+       height: 80vh;
+       width: 400px;
+   }
+   .contact-form {
+     .contact-float {
+       top: 5px;
+       font-size: 16px;
+     }
+     .answer-question {
+       font-size: 12px;
+     }
+     .where-to-answer {
+       label {
+         svg {
+           width: 20px;
+
+         }
+       }
+       input:checked ~ .radio-mark {
+         svg {
+           width: 25px;
+         }
+       }
+     }
+     input {
+       font-size: 16px;
+       padding: 5px 0;
+     }
+     #contact-message {
+       margin-top: 10px;
+       max-height: 120px;
+     }
+   }
+}
 }
 /**
  * ----------------------------------------
