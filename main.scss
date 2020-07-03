@@ -1167,6 +1167,7 @@ _______________________________
       font-size: 16px;
     }
    .contact-form-wrapper-hide {
+       z-index: 998;
        height: 100vh;
        width: 100vw;
        left: 0;
@@ -1177,6 +1178,7 @@ _______________________________
        padding: 5px;
    }
    .contact-form-wrapper-show {
+    z-index: 998;
       height: 100vh;
       border-radius: 0;
       width: 100vw;
@@ -1351,7 +1353,7 @@ _______________________________
     }
   }
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 800px) and (min-width: 768px) {
   .contacts {
     .contact-form-info {
       font-size: 12px;
