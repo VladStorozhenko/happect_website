@@ -315,7 +315,7 @@
     </main>
     <div class="form-wrapper">
         <h1>Напишите нам</h1>
-        <form class='main-form' method='POST' action='main_form.php'>
+        <form class='main-form' method='POST' action='../main_form.php'>
             <h3>Вид проекта:</h3>
             <div class="form-content">
                 <div class="col-1">
@@ -419,7 +419,7 @@
         <div class="contacts">
             <div class="contact-form-wrapper-hide">
                 <h2 class="contact-form-info">Если у вас есть какие-либо вопросы, мы с радостью на них ответим :)</h2>
-                <form action="contact_form.php" class='contact-form' method='POST'>
+                <form action="../contact_form.php" class='contact-form' method='POST'>
                     <div class='input-wrapper'>
                         <input type="text" id='contact-name' name='contact-name' required />
                         <span class="contact-name-float contact-float">Ваше имя</span>
