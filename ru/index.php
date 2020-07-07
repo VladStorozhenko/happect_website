@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru" ontouchmove>
 <head>
@@ -15,26 +16,30 @@
      <!-- Main CSS file -->
      <link rel="stylesheet" href="../main.css">
      <style>
-         .main-how-we-work h3:before {
-             content: 'Наведите '
-         } 
-         @media screen and (min-width: 1024px) {
-            .about-us-text-wrapper {
-                top: 150px;
-            }
-         }
-         @media screen and (max-width: 1023px) {
-            .about-us-text-wrapper {
-                top: 5vh;
-            }
-            .main-how-we-work h3:before {
-             content: 'Кликните '
-         } 
+        .main-how-we-work h3:before {
+            content: 'Наведите '
+        } 
+        @media screen and (min-width: 1024px) {
+           .about-us-text-wrapper {
+               top: 150px;
+           }
+        }
+        @media screen and (max-width: 1023px) {
+           .about-us-text-wrapper {
+               top: 5vh;
+           }
+           .main-how-we-work h3:before {
+            content: 'Кликните '
+        } 
 
-         }
-     </style>
+        }
+    </style>
 </head>
 <body class='body'>
+    <!-- Messages -->
+    <div class="form-success" id='contact-form-success'>
+        <p>Форма успешно отправлена, скоро мы с вами свяжемся</p>
+    </div>
     <div class="triangle"></div>
     <div class="triangle-shadow"></div>
     <div class="triangle-2"></div>
@@ -73,13 +78,13 @@
             <a href='#about-us' class='header-link'><p>О нас</p></a>
             <a href='#our-skills' class='header-link'><p>Наши навыки</p></a>
             <a href='#how-we-work' class='header-link'><p>Как мы работаем</p></a>
-            <a href='portfolio' id='portfolio-link'><p>Портфолио</p></a>
+            <a href='portfolio.html' id='portfolio-link'><p>Портфолио</p></a>
         </nav>
     </header>
     <main class='happect-main'>
         <div class="landing">
             <div class="main-landing">
-                <h1>Мы разрабатываем для вашего бизнеса.</h1>
+                <h1>Мы разрабатываем для вашего.</h1>
                 <div class="happect-chain">
                     <h2>идея</h2>
                     <!-- Arrow -->
@@ -125,9 +130,9 @@
                         <h2 class="skills-title">Дизайн</h2>
                     </div>
                     <div class="skills">
-                        <h2 class="skill">Дизайн лого</h2>
+                        <h2 class="skill">Дизайн логотипа</h2>
                         <h2 class="skill">Редизайн</h2>
-                        <h2 class="skill">Веб дизайн</h2>
+                        <h2 class="skill">Веб-дизайн</h2>
                     </div>
                 </div> <!-- .skills-design -->
                 <div class="skills-code">
@@ -137,7 +142,7 @@
                     <div class="skills">
                         <h2 class="skill">Front-end</h2>
                         <h2 class="skill">Back-end</h2>
-                        <h2 class="skill">Веб дизайн</h2>
+                        <h2 class="skill">Web design</h2>
                     </div>
                 </div> <!-- .skills-code -->
                 <div class="skills-cms">
@@ -157,7 +162,7 @@
             <div class="triangle-2"></div>
             <div class="triangle-2-shadow"></div>
             <h1>Как мы работаем</h1>
-            <h3>чтобы получить больше информации</h3>
+            <h3>, чтобы получить больше информации</h3>
             <div class="work-grid">
                 <div>
                     <p>Знакомство</p>
@@ -212,7 +217,7 @@
                     <span class="number">3</span>
                 </div>
                 <div>
-                    <p class='even'>Опытный образец</p>
+                    <p class='even'>Прототип</p>
                     <svg width="120" height="49" viewBox="0 0 120 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 13.1318H4.64048L16.0147 37.9263L27.2529 13.1318H31.9217L16.4119 47.1459H15.6006L0 13.1318Z" fill="#C4C4C4"/>
                         <path d="M45.5028 1.15601H54.5057V47.1459H49.956V5.66046H42.7627L45.5028 1.15601Z" fill="#C4C4C4"/>
@@ -243,7 +248,7 @@
                     <span class="number">5</span>
                 </div>
                 <div>
-                    <p class='even'>Макет и программирование</p>
+                    <p class='even'>Вёрстка и программирование</p>
                     <svg width="120" height="118" viewBox="0 0 120 118" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M119.878 42.0224C119.878 62.7246 119.913 82.7506 119.936 103.115C119.936 104.082 119.971 105.05 119.994 106.018C118.87 112.268 115.135 116.057 109.063 117.655C77.8966 117.655 46.724 117.602 15.5572 117.707C11.1988 117.719 6.96286 117.246 3.94465 114.11C2.94829 113.078 2.03933 111.93 1.39257 110.653C-0.314638 107.26 0.0233085 100.34 0.0233085 95.0168C0.0233085 92.8189 0.0932284 62.2408 0.134015 48.4995C0.139842 47.4326 0.116535 46.3716 0.122362 45.3047C0.157322 36.3557 5.45958 30.998 12.9119 30.7706C14.2753 30.7298 16.2913 31.2428 17.579 31.6917C21.343 33.0035 23.8602 36.0001 25.0779 39.9062C25.2586 40.4775 25.5266 41.0372 26.2782 41.0605C27.9097 41.1188 40.8798 41.0838 45.7917 41.0721C54.654 41.0488 87.8543 41.008 93.2382 41.0896C94.1238 41.1013 94.7007 40.839 94.9803 39.9586C96.5361 34.9623 100.067 31.5751 105.002 30.8989C106.54 30.689 108.119 30.7473 109.652 30.9863C113.894 31.6568 116.242 33.604 118.392 37.2535C119.307 38.7985 119.878 40.804 119.878 42.0224ZM69.4829 112.349C71.0386 112.355 72.5943 112.361 74.1559 112.367C80.169 112.361 86.1821 112.355 92.1952 112.355C93.7509 112.361 95.3066 112.361 96.8624 112.367C100.434 112.39 104.017 112.542 107.583 112.408C111.388 112.262 114.278 109.388 114.721 105.633C115.141 102.112 113.165 99.0861 109.664 97.8968C104.857 96.212 100.312 98.7888 99.7058 103.785C99.3911 106.403 98.4414 107.738 95.6795 107.236C94.5725 106.269 94.3685 105.027 94.3802 103.61C94.4093 99.9723 94.3336 53.4667 94.4093 47.8641C94.4268 46.7156 94.2695 46.3016 92.7837 46.3016C90.7793 46.3016 89.2702 46.2841 87.5164 46.2783C81.5091 46.2841 75.5018 46.2958 69.4945 46.3016C67.933 46.2958 66.3715 46.2841 64.8099 46.2783C58.8026 46.2841 52.7953 46.2958 46.7881 46.3016C45.0342 46.2958 43.2746 46.2841 41.5208 46.2783C36.9061 46.2433 32.2913 46.2433 27.6766 46.1384C26.22 46.1034 25.6082 46.4998 25.6489 48.0623C25.7713 52.9653 25.6431 99.4476 25.713 104.007C25.7422 105.826 25.2527 107.073 23.3882 107.277C21.4421 107.493 20.539 106.339 20.4807 104.479C20.3059 98.9462 17.713 97.5179 14.1588 97.4596C8.38456 97.3721 5.51785 100.334 5.51785 106.047C5.51785 109.662 10.8376 112.402 12.807 112.425C16.3671 112.466 19.9213 112.378 23.4814 112.343C25.2294 112.349 26.9774 112.355 28.7254 112.361C34.5463 112.361 40.3671 112.355 46.1879 112.355C47.9359 112.361 49.6897 112.367 51.4377 112.367C57.4567 112.361 63.4698 112.355 69.4829 112.349ZM111.412 92.6557C112.53 93.0171 113.422 93.4136 114.861 94.5038C114.779 92.9822 114.867 90.5219 114.861 89.1227C114.849 83.2636 114.878 52.2657 114.622 44.9083C114.622 44.5002 114.622 44.0921 114.622 43.684C114.325 39.0025 111.522 36.1283 107.234 36.0992C102.992 36.07 99.6417 39.1366 99.6184 43.5615C99.5484 55.8511 99.6417 89.8923 99.5601 92.3001C99.5135 93.6468 99.764 94.4222 101.314 93.5593C104.542 91.7637 107.787 91.4955 111.412 92.6557ZM5.59359 41.9875C5.03423 47.9981 5.4421 83.7183 5.43045 93.2329C5.37218 93.6759 5.31974 94.119 6.01894 93.8858C10.2374 91.892 14.4909 91.2215 18.8259 93.5477C20.5331 94.463 20.5157 93.3028 20.5098 92.1368C20.4691 78.6638 20.3933 68.1931 20.3933 51.7177C20.3933 49.7471 20.5681 44.2961 20.4749 43.1593C20.0321 37.9939 17.0779 36.21 12.9177 36.2391C9.89949 36.2624 6.22287 39.2124 5.59359 41.9875Z" fill="#C4C4C4"/>
                         <path d="M78.0189 11.5842C75.764 4.2209 81.6489 -1.78396 89.2819 0.489725C90.5521 0.868673 91.7524 1.54495 92.7604 2.40778C98.7269 7.53232 95.9243 15.8167 89.2469 17.7814C85.6227 18.8483 82.1792 17.9971 79.9592 15.1754C79.1143 14.1027 78.4151 12.8842 78.0189 11.5842ZM86.4326 12.9484C88.7983 13.1116 90.4355 11.4734 90.5113 9.4154C90.5929 7.19419 89.1304 5.84163 86.5958 5.87661C84.3117 5.90576 82.89 7.11257 82.9658 9.38042C83.0299 11.59 84.539 12.8201 86.4326 12.9484Z" fill="#C4C4C4"/>
@@ -306,29 +311,29 @@
                 </div>
             </div>
         </div> <!-- .main-how-we-work -->
-        <!-- ! Form -->
+        <!-- ! MAIN Form -->
     </main>
     <div class="form-wrapper">
-        <h1>Свяжитесь с нами</h1>
-        <form class='main-form'>
-            <h3>Тип проекта:</h3>
+        <h1>Напишите нам</h1>
+        <form class='main-form' method='POST' action='main_form.php'>
+            <h3>Вид проекта:</h3>
             <div class="form-content">
                 <div class="col-1">
                     <div class="label-container">
                         <label class='radio-container'>
-                            <input type="radio" name="purpose" checked>С нуля
+                            <input type="radio" name="purpose" checked value='scratch'>С нуля
                             <div class='line'></div>
                         </label>
                         <label class='radio-container'>
-                            <input type="radio" name="purpose">Аутсорсинг
+                            <input type="radio" name="purpose" value='outsorcing'>Аутсорсинг
                             <div class='line'></div>
                         </label>
                     </div>
                     <div class='input-wrapper'>
-                        <input type="text" id='main-contact-name' required />
+                        <input type="text" id='main-contact-name' name='name' required />
                         <span class="contact-name-float contact-float">Ваше имя</span>
                     </div>
-                    <h2 class='answer-question'>Куда отправить ответ?</h2>
+                    <h2 class='answer-question'>Как вы хотите получить ответ?</h2>
                     <div class="where-to-answer">
                         <label class='answer-container' title='Email'>
                             <input type='radio' id='main-contact-email' name='main-contact-way' value='mail' checked/> 
@@ -360,13 +365,14 @@
                         </label>
                     </div>
                     <input type="email" name="main-client-email" id="main-client-email" placeholder='Ваш E-mail' required />
-                    <input type="tel" name="main-client-viber" id="main-client-viber" placeholder='Ваш номер телефона, привязанный к Viber'/>
-                    <input type="text" name="main-client-telegram" id="main-client-telegram" placeholder='Ваше пользовательское имя Telegram' />
+                    <input type="tel" name="main-client-viber" id="main-client-viber" placeholder='Ваш телефон, связанный с аккаунтом Viber'/>
+                    <input type="text" name="main-client-telegram" id="main-client-telegram" placeholder='Ваше имя пользователя Telegram' />
                 </div> 
                 <div class="col-2">
-                    <textarea name="project-info" id="project-info" placeholder='Несколько слов о вашем проекте'></textarea>
+                    <textarea name="project-info" id="project-info" placeholder='Несколько слов о вашем проекте' required></textarea>
                 </div>
             </div>
+            <input type="hidden" id='main-current-page-input' name='main-current-page'>
             <input type="submit" value="Отправить" id='main-contact-submit'>
         </form>
     </div>
@@ -413,12 +419,12 @@
         <div class="contacts">
             <div class="contact-form-wrapper-hide">
                 <h2 class="contact-form-info">Если у вас есть какие-либо вопросы, мы с радостью на них ответим :)</h2>
-                <form action="#" class='contact-form' autocomplete="off">
+                <form action="contact_form.php" class='contact-form' method='POST'>
                     <div class='input-wrapper'>
-                        <input type="text" id='contact-name' required />
+                        <input type="text" id='contact-name' name='contact-name' required />
                         <span class="contact-name-float contact-float">Ваше имя</span>
                     </div>
-                    <h2 class='answer-question'>Куда отправить ответ?</h2>
+                    <h2 class='answer-question'>Как вы хотите получить ответ?</h2>
                     <div class="where-to-answer">
                         <label class='answer-container' title='Email'>
                             <input type='radio' id='contact-email' name='contact-way' value='mail' checked/> 
@@ -449,19 +455,20 @@
                             </span>
                         </label>
                     </div>
-                    <input type="email" name="client-email" id="client-email" placeholder='Ваш E-mail' required />
-                    <input type="tel" name="client-viber" id="client-viber" placeholder='Ваш номер телефона, привязанный к Viber'/>
-                    <input type="text" name="client-telegram" id="client-telegram" placeholder='Ваше пользовательское имя Telegram' />
+                    <input type="email" name="client-contact-mail" id="client-email" placeholder='Ваш E-mail' required />
+                    <input type="tel" name="client-contact-viber" id="client-viber" placeholder='Ваш телефон, связанный с аккаунтом Viber'/>
+                    <input type="text" name="client-contact-telegram" id="client-telegram" placeholder='Ваше имя пользователя Telegram' />
                     <textarea name="contact-message" id="contact-message" placeholder='Ваше сообщение' required></textarea>
-                    <input type="submit" value="Отправить" id='contact-submit'>
+                    <input type="hidden" id='current-page-input' name='current-page'>
+                    <input type="submit" value="Отправить" id='contact-submit' name='contact-send'>
                 </form>
             </div>   
         </div>
     <!-- Language switcher -->
     <div class="language-switcher-wrapper">
         <div class="language-list-hidden">
-            <a href="../index.html" class="language-link">
-                <h2 class="language-en">EN</h2>
+            <a href="../index.php" class="language-link">
+                <h2 class="language-ru">EN</h2>
             </a>
         </div>
         <h2 class="chosen-language">RU</h2>
@@ -470,5 +477,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
     <!-- Main JS script -->
     <script src="../main.js"></script>
+    <?php 
+    if(isset($_GET['contact_form_submitted']) && $_GET['contact_form_submitted'] == 1) {
+    ?>
+        <script>
+            function contactFormSuccess() {
+                document.getElementById('contact-form-success').style.display = 'flex';
+                document.getElementById('contact-form-success').style.transform = '(-50%, 0)';
+                setTimeout(() => {
+                    document.getElementById('contact-form-success').style.display = 'none';
+                }, 3000);
+            }
+            contactFormSuccess();
+        </script>
+    <?php
+    }
+
+    if(isset($_GET['main_form_submitted']) && $_GET['main_form_submitted'] == 1) {
+    ?>
+        <script>
+            function mainFormSuccess() {
+                document.getElementById('main-form-success').style.display = 'flex';
+                document.getElementById('main-form-success').style.transform = '(-50%, 0)';
+                setTimeout(() => {
+                    document.getElementById('main-form-success').style.display = 'none';
+                }, 3000);
+            }
+            mainFormSuccess();
+        </script>
+    <?php
+    }
+    ?> 
 </body>
 </html>
