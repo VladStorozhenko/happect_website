@@ -24,8 +24,6 @@ SmoothScroll({
 */
 let header = document.querySelector('.happect-header');
 
-window.addEventListener('scroll', changeHeaderOnScroll);
-
 function changeHeaderOnScroll() {
     if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
         header.style.background = '#231F20';
@@ -34,6 +32,40 @@ function changeHeaderOnScroll() {
     }
 }
 
+let prevScroll = window.scrollY || document.documentElement.scrollTop;
+let direction = 0; // 0 - initial, 1 - up, 2 - down
+let prevDirection = 0;
+
+function showHideHeader() {
+    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */    
+    let currentScroll = window.scrollY || document.documentElement.scrollTop;
+    if(currentScroll > prevScroll) {
+        direction = 2;
+    } else if(currentScroll < prevScroll) {
+        direction = 1;
+    } 
+    if(direction !== prevDirection) {
+        toggleHeader(direction, currentScroll);
+    }
+
+    prevScroll = currentScroll;
+}
+
+function toggleHeader(direction, currentScroll) {
+    if(direction === 2 && currentScroll > 200) {
+        header.style.top = '-100px';
+        prevDirection = direction;
+    } else if(direction === 1) {
+        header.style.top = '0';
+        prevDirection = direction;
+    }
+}
+
+window.addEventListener('scroll', showHideHeader);
+window.addEventListener('load', showHideHeader);
+
+window.addEventListener('scroll', changeHeaderOnScroll);
+window.addEventListener('load', changeHeaderOnScroll);
 /*
  Contact form scripts 
 */
@@ -93,6 +125,8 @@ function getAnswerWay(form, name, appendix = '') {
         document.getElementById(appendix + 'client-telegram').required = true;
         document.getElementById(appendix + 'client-viber').required = false;
         document.getElementById(appendix + 'client-email').required = false;
+        document.getElementById(appendix + 'client-viber').value = '';
+        document.getElementById(appendix + 'client-email').value = '';
     } else if(val == 'mail') {
         document.getElementById(appendix + 'client-email').style.display='block';
         document.getElementById(appendix + 'client-telegram').style.display='none';
@@ -100,6 +134,8 @@ function getAnswerWay(form, name, appendix = '') {
         document.getElementById(appendix + 'client-email').required = true;
         document.getElementById(appendix + 'client-telegram').required = false;
         document.getElementById(appendix + 'client-viber').required = false;
+        document.getElementById(appendix + 'client-viber').value = '';
+        document.getElementById(appendix + 'client-telegram').value = '';
     } else if(val == 'viber') {
         document.getElementById(appendix + 'client-viber').style.display='block';
         document.getElementById(appendix + 'client-telegram').style.display='none';
@@ -107,6 +143,8 @@ function getAnswerWay(form, name, appendix = '') {
         document.getElementById(appendix + 'client-viber').required = true;
         document.getElementById(appendix + 'client-telegram').required = false;
         document.getElementById(appendix + 'client-email').required = false;
+        document.getElementById(appendix + 'client-telegram').value = '';
+        document.getElementById(appendix + 'client-email').value = '';
     }
 }
 
@@ -159,3 +197,5 @@ mainViberOption.addEventListener('click', mainFormChooseAnswerMethod);
 function mainFormChooseAnswerMethod() {
     getAnswerWay(document.querySelector('.main-form'), 'main-contact-way', 'main-');
 }
+
+document.getElementById('current-page-input').value = window.location.href;document.getElementById('main-current-page-input').value = window.location.href;

@@ -26,7 +26,6 @@ html {
 * {
     padding: 0;
     margin: 0;
-    // box-sizing: border-box;
 }
 body {
     background-color: $primary-background-color;
@@ -97,6 +96,26 @@ a {
     display: none;
   }
 }
+/*
+MESSAGES STYLES
+_______________________________
+*/
+
+.form-success {
+  width: 50%;
+  position: fixed;
+  top: 10vh;
+  height: 100px;
+  background: green;
+  color: white;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  display: none;
+}
+
 /*
 TRIANGLES STYLES
 _______________________________
@@ -193,7 +212,7 @@ _______________________________
     padding: 20px 30px 20px 30px;
     max-width: 100%;
     height: 5vh;
-    transition: all $default-transition-duration $header-timing-function;
+    transition: all $default-transition-duration ease;
     .happect-logo-area {
         display: flex;
         align-items: center;
