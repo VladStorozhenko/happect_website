@@ -477,36 +477,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
     <!-- Main JS script -->
     <script src="../main.js"></script>
-    <?php 
-    if(isset($_GET['contact_form_submitted']) && $_GET['contact_form_submitted'] == 1) {
-    ?>
-        <script>
-            function contactFormSuccess() {
-                document.getElementById('contact-form-success').style.display = 'flex';
-                document.getElementById('contact-form-success').style.transform = '(-50%, 0)';
-                setTimeout(() => {
-                    document.getElementById('contact-form-success').style.display = 'none';
-                }, 3000);
-            }
-            contactFormSuccess();
-        </script>
-    <?php
-    }
-
-    if(isset($_GET['main_form_submitted']) && $_GET['main_form_submitted'] == 1) {
-    ?>
-        <script>
-            function mainFormSuccess() {
-                document.getElementById('main-form-success').style.display = 'flex';
-                document.getElementById('main-form-success').style.transform = '(-50%, 0)';
-                setTimeout(() => {
-                    document.getElementById('main-form-success').style.display = 'none';
-                }, 3000);
-            }
-            mainFormSuccess();
-        </script>
-    <?php
-    }
-    ?> 
 </body>
 </html>
