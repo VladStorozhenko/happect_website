@@ -3,7 +3,7 @@
 <html lang="ru" ontouchmove>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
     <title>Happect | Веб-студия</title>
     <!-- 
         TODO: add 'description' meta tag, add .htaccess file (custom 404 page and trip extensions from url)

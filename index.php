@@ -3,11 +3,10 @@
 <html lang="en" ontouchmove>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
     <title>Happect | Web-studio</title>
-    <!-- 
-        TODO: add 'description' meta tag, add .htaccess file (custom 404 page and trip extensions from url)
-     -->
+    <meta name='keywords' content='Web studio, web, website, site, make a website, build a website, happect, freelance studio, studio'>
+    <meta name='description' content='Modern Web Studio, ready to make your dreams real.'>
      <!-- Google Fonts: Raleway -->
      <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
      <!-- Google Fonts: Open Sans -->
@@ -15,6 +14,8 @@
      <!-- Slick -->
      <!-- Main CSS file -->
      <link rel="stylesheet" href="main.css">
+     <!-- Favicon -->
+     <link rel="icon" href="./favicon.ico"/>
 </head>
 <body class='body'>
     <!-- Messages -->
